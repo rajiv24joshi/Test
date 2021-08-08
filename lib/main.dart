@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:acoount_invoice/list.dart';
+import 'package:acoount_invoice/widget/company_card.dart';
 import 'package:acoount_invoice/screens/account_invoice_light/account_invoice_light.dart';
+import 'package:acoount_invoice/widget/company_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,11 +41,11 @@ class Screen extends StatelessWidget {
     final textScaleFactor=size.height/designHeight;
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(20),
         child: Column(
           children: [
             SizedBox(
-              height: 91.0/ designHeight * size.height,
+              height: 91.0,
             ),
             Row(
               children: [
@@ -57,19 +58,6 @@ class Screen extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
                 ),
-                // Consumer(
-                //
-                //   builder: (context,watch,val){
-                //       final checkValue = watch(checkboxProvider).state;
-                //     return Checkbox(value: checkValue, onChanged: (val){
-                //
-                //
-                //     context.read(checkboxProvider).state=val;
-                //   });
-                //   },
-                //
-                //
-                // ),
                 SizedBox(
                   width: 120,
                 ),
@@ -85,15 +73,9 @@ class Screen extends StatelessWidget {
             SizedBox(
               height: 69,
             ),
-            ListCard(),
-            SizedBox(
-              height: 16.0,
-            ),
-            ListCard(),
-            SizedBox(
-              height: 16.0,
-            ),
-            ListCard(),
+        Expanded(
+          child: CompanyList(),
+        ),
         Spacer(
         ),
         Align(
@@ -107,19 +89,4 @@ class Screen extends StatelessWidget {
   }
 }
 
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key key, this.title}) : super(key: key);
 
-//   final String title;
-
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return 
-//   }
-// }

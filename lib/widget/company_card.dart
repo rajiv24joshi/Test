@@ -2,9 +2,13 @@ import 'package:acoount_invoice/screens/account_invoice_light/account_invoice_li
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ListCard extends StatelessWidget {
+class CompanyCard extends StatelessWidget {
 
-  Widget buildBottomSheet;
+  String companyName;
+  String accountType;
+  String vatNo;
+  String regNo;
+  CompanyCard({this.companyName, this.accountType, this.vatNo, this.regNo});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,7 @@ class ListCard extends StatelessWidget {
                   SizedBox(
                     height: 7.0,
                   ),
-                  Text('XYZ Pvt Ltd',
+                  Text(companyName,
                     style:GoogleFonts.montserrat(
                       color: Color(0xff212121),
                       fontSize: 12.0,
@@ -53,7 +57,7 @@ class ListCard extends StatelessWidget {
                   SizedBox(
                     height: 8.0,
                   ),
-                  Text('609982945',
+                  Text(vatNo,
                     style:GoogleFonts.montserrat(
                       color: Color(0xff212121),
                       fontSize: 12.0,
@@ -81,7 +85,7 @@ class ListCard extends StatelessWidget {
                   SizedBox(
                     height: 7.0,
                   ),
-                  Text('Company',
+                  Text(accountType,
                     style:GoogleFonts.montserrat(
                       color: Color(0xff212121),
                       fontSize: 12.0,
@@ -103,7 +107,7 @@ class ListCard extends StatelessWidget {
                   SizedBox(
                     height: 8.0,
                   ),
-                  Text('2020/00266/77',
+                  Text(regNo,
                     style:GoogleFonts.montserrat(
                       color: Color(0xff212121),
                       fontSize: 12.0,
