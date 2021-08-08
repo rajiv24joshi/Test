@@ -13,9 +13,11 @@ class CompanyList extends StatefulWidget {
 class _CompanyListState extends State<CompanyList> {
   List<Company> company = [
     Company(companyName:'XYZ pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/226'),
-    Company(companyName:'XYZ pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/226'),
-    Company(companyName:'XYZ pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/226'),
-    Company(companyName:'XYZ pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/226'),
+    Company(companyName:'Abc pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/22'),
+    Company(companyName:'add pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/225'),
+    Company(companyName:'hello pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/225'),
+    Company(companyName:'hello pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/225'),
+    Company(companyName:'hello pvt Ltd', accountType:'Company', vatNo:'46516516', regNo:'20120/225'),
   ];
 
   @override

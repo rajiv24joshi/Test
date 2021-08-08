@@ -76,8 +76,6 @@ class Screen extends StatelessWidget {
         Expanded(
           child: CompanyList(),
         ),
-        Spacer(
-        ),
         Align(
           alignment: Alignment.bottomRight,
           child: ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.description), label: Text('Report'),),
