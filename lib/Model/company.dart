@@ -1,9 +1,9 @@
 class Company {
-  final String companyName;
-  final String accountType;
-  final String vatNo;
-  final String regNo;
-
-  Company({this.companyName, this.accountType, this.vatNo, this.regNo });
-
+  String companyName;
+  String accountType;
+  String vatNo;
+  String regNo;
+  int id;
+  Company(
+      {this.id, this.companyName, this.accountType, this.vatNo, this.regNo});
 }
