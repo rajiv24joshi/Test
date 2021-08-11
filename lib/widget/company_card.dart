@@ -168,15 +168,27 @@ class CompanyCard extends ConsumerWidget {
                               // TODO
                               // var list =
                               //     context.read(CompalnyListProvider).state;
-
-                              // list[0].companyName = 'sds';
-
+                              //
+                              // // list[0].companyName = 'sds';
+                              //
                               // context.read(CompalnyListProvider).state = list;
 
                               context
-                                  .read(CompanyNameControllerProvider)
+                                  .read(companyNameControllerProvider)
                                   .state
                                   .text = company.companyName;
+                              context
+                                  .read(accountTypeControllerProvider)
+                                  .state
+                                  .text = company.accountType;
+                              context
+                                  .read(vatNoControllerProvider)
+                                  .state
+                                  .text = company.vatNo;
+                              context
+                                  .read(regNoControllerProvider)
+                                  .state
+                                  .text = company.regNo;
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(

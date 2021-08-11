@@ -5,8 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-final CompanyNameControllerProvider =
-    StateProvider<TextEditingController>((ref) {
+final companyNameControllerProvider = StateProvider<TextEditingController>((ref) {
+  return TextEditingController();
+});
+final accountTypeControllerProvider = StateProvider<TextEditingController>((ref) {
+  return TextEditingController();
+});
+final vatNoControllerProvider = StateProvider<TextEditingController>((ref) {
+  return TextEditingController();
+});
+final regNoControllerProvider = StateProvider<TextEditingController>((ref) {
   return TextEditingController();
 });
 
@@ -17,7 +25,10 @@ class AccountInvoiceLight extends ConsumerWidget {
   Widget build(BuildContext context, watch) {
     final size = MediaQuery.of(context).size;
     final textScaleFactor = size.height / designHeight;
-    final companyName_c = watch(CompanyNameControllerProvider).state;
+    final companyName_c = watch(companyNameControllerProvider).state;
+    final accountType_c = watch(accountTypeControllerProvider).state;
+    final vatNo_c = watch(vatNoControllerProvider).state;
+    final regNo_c = watch(regNoControllerProvider).state;
     return Container(
       padding: EdgeInsets.all(10.0),
       child: Column(
@@ -49,6 +60,9 @@ class AccountInvoiceLight extends ConsumerWidget {
                       width: 80,
                       child: TextField(
                         controller: companyName_c,
+                        onChanged: (value){
+                          company.companyName=value;
+                        },
                       )),
                   // Text(
                   //   company.companyName,
@@ -74,20 +88,19 @@ class AccountInvoiceLight extends ConsumerWidget {
                   SizedBox(
                     height: 8.0,
                   ),
-                  Text(
-                    company.vatNo,
-                    style: GoogleFonts.montserrat(
-                      color: Color(0xff212121),
-                      fontSize: 12.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: -1,
-                    ),
-                  ),
+                  SizedBox(
+                      width: 80,
+                      child: TextField(
+                        controller: vatNo_c,
+                        onChanged: (value){
+                          company.vatNo=value;
+                        },
+                      )),
+
                 ],
               ),
               SizedBox(
-                width: 110.0 / designWidth * size.width,
+                width: 50.0 / designWidth * size.width,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,15 +117,23 @@ class AccountInvoiceLight extends ConsumerWidget {
                   SizedBox(
                     height: 7.0,
                   ),
-                  Text(
-                    company.accountType,
-                    style: GoogleFonts.montserrat(
-                      color: Color(0xff212121),
-                      fontSize: 12.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                  SizedBox(
+                      width: 80,
+                      child: TextField(
+                        controller: accountType_c,
+                        onChanged: (value){
+                          company.accountType=value;
+                        },
+                      )),
+                  // Text(
+                  //   company.accountType,
+                  //   style: GoogleFonts.montserrat(
+                  //     color: Color(0xff212121),
+                  //     fontSize: 12.0,
+                  //     fontStyle: FontStyle.normal,
+                  //     fontWeight: FontWeight.w600,
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 6.0,
                   ),
@@ -128,16 +149,24 @@ class AccountInvoiceLight extends ConsumerWidget {
                   SizedBox(
                     height: 8.0,
                   ),
-                  Text(
-                    company.regNo,
-                    style: GoogleFonts.montserrat(
-                      color: Color(0xff212121),
-                      fontSize: 12.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: -1,
-                    ),
-                  ),
+                  SizedBox(
+                      width: 80,
+                      child: TextField(
+                        controller: regNo_c,
+                        onChanged: (value){
+                          company.regNo=value;
+                        },
+                      )),
+                  // Text(
+                  //   company.regNo,
+                  //   style: GoogleFonts.montserrat(
+                  //     color: Color(0xff212121),
+                  //     fontSize: 12.0,
+                  //     fontStyle: FontStyle.normal,
+                  //     fontWeight: FontWeight.w600,
+                  //     letterSpacing: -1,
+                  //   ),
+                  // ),
                 ],
               ),
             ],
